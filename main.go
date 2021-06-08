@@ -1,5 +1,6 @@
-// Go will only a program of package main. We can run this file by running go run main.go
+// Go will only run a program of package main. We can run this file by running go run main.go
 // Uncomment things as you go to test them in the terminal.
+// I recommend having the "Go" extension in vscode. This will show errors without you having to compile and run your program
 package main
 
 import "fmt"
@@ -58,8 +59,8 @@ func main() {
 	// Using fmt and formatting strings
 
 	//  Print
-	age := 35
-	name := "Tomo"
+	// age := 35
+	// name := "Tomo"
 	// // Print does not print a new line
 	// fmt.Print("Hello, ")
 	// // and Println does
@@ -82,6 +83,35 @@ func main() {
 	// // Google format specifiers for more details
 
 	// // Sprintf -> save the formatted strings. It does not print, bur rather returns the formatted string so you can store it.
-	var str = fmt.Sprintf("my age is %v and my name is %v \n", age, name)
-	fmt.Println("The saved string is", str)
+	// var str = fmt.Sprintf("my age is %v and my name is %v \n", age, name)
+	// fmt.Println("The saved string is", str)
+
+	// Arrays and Slices
+	// You need to tell the array the length (inside the []) and the type afterwards (int) at time of declaration.
+	// Arrays are fixed length, and can only be of one type.
+	var ages [3]int = [3]int{20, 25, 30}
+	//shorthand
+	// var ages = [3]int{20, 25, 30}. You can use len for the length of the array.
+	fmt.Println(ages, len(ages))
+	// You can use the walrus operator for arrays also.
+	names := [4]string{"Tomo", "Patrick", "Sam", "Snickers"}
+	fmt.Println(names, len(names))
+
+	// Slices
+	// Slices use arrays under the hood but can be manipulated (we can append). You just dont declare the length when you create it.
+	var scores = []int{100, 50, 25}
+	scores[2] = 70
+	// The append returns a new slice, so if we want to change our original slice, we need to reassign
+	scores = append(scores, 89)
+	fmt.Println(scores, len(scores))
+
+	// Slice Ranges
+	// We can return a range of anarray from start to end position, inclusive of the first but not the second.
+	rangeOne := names[1:3]
+	// Not declaring the second number will include everything from the first number, including the last index.
+	rangeTwo := names[2:]
+	// Not declaring the first number will include everything from position 0 to the second number, not inclusive.
+	rangeThree := names[:3]
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
+
 }

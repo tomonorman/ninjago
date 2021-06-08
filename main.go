@@ -108,7 +108,7 @@ func main() {
 	// Slice Ranges
 	// We can return a range of anarray from start to end position, inclusive of the first but not the second.
 	rangeOne := names[1:3]
-	// Not declaring the second number will include everything from the first number, including the last index.
+	// Not declaring the second number will include everything from the first number, to the last index (inclusive).
 	rangeTwo := names[2:]
 	// Not declaring the first number will include everything from position 0 to the second number, not inclusive.
 	rangeThree := names[:3]

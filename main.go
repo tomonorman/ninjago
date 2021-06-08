@@ -1,11 +1,10 @@
 // Go will only run a program of package main. We can run this file by running go run main.go
 // Uncomment things as you go to test them in the terminal.
 // I recommend having the "Go" extension in vscode. This will show errors without you having to compile and run your program
+// It will also automatially import packages as you use them in your code
 package main
 
 import (
-	// If we use a package and have the Go extension installed in VsCode, the extention will autoimport the package
-	// here so we dont need to remember to do it!
 	"fmt"
 	"sort"
 )
